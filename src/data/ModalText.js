@@ -1,0 +1,2 @@
+export const MODAL_TITLE = "Congratulations! Your account has been successfully created. "
+export const MODAL_TEXT_CONTENT = "An email has been sent to the provided address with further instructions. Please check your inbox, and don't forget to also look in your spam folder, just in case."

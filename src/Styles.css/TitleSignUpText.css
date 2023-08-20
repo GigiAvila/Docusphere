@@ -1,0 +1,19 @@
+.titleSignUpContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 32%; 
+  padding-top: 8vw;
+}
+
+.titleSignUpContainer > h3 {
+  font-size: 3rem;
+}
+
+.titleSignUpContainer > h5 {
+  font-size: 1.5rem;
+  margin-bottom: 2vw;
+
+}

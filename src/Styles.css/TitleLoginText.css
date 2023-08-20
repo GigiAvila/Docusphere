@@ -1,0 +1,19 @@
+.titleLoginOuterContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 32%; 
+ 
+}
+
+.titleLoginContainer > h3 {
+  font-size: 3rem;
+
+}
+
+.titleLoginContainer > h5 {
+  font-size: 1.5rem;
+  margin-bottom: 2vw;
+
+}

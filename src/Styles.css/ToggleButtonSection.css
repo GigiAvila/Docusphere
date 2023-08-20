@@ -1,0 +1,13 @@
+.toggleSection {
+  height: 10vh;
+  width: 100%;
+  position: relative;
+}
+
+.toogleSignInButton {
+  font-size: 1rem;
+  position: absolute;
+  right: 20px;
+  margin: 20px
+  
+}
