@@ -1,9 +1,9 @@
 
 import './Styles.css/App.css'
 
-import Main from './components.jsx/Main'
-import Footer from './components.jsx/Footer'
-import Header from './components.jsx/Header'
+import Main from './components/Main'
+import Footer from './components/Footer'
+import Header from './components/Header'
 import BackgroundImg from './assets/loginphoto.png'
 
 function App() {

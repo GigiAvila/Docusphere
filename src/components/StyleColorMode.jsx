@@ -11,7 +11,7 @@ function StyleColorMode() {
   const color = useColorModeValue('white', 'gray.800');
 
   return (
-    <div className='colorModeSwitch'>
+    <div data-testid="style-color-mode-component" className='colorModeSwitch'>
       <FormControl display='flex' alignItems='center' justifyContent='center' gap='0.5rem' padding='1.5rem'>
         <SunIcon boxSize={6} color={colorMode === 'dark' ? 'white' : 'gray.500'} />
         <Switch

@@ -1,7 +1,8 @@
 import React from 'react'
 import StyleColorMode from './StyleColorMode'
-import '../Styles.css/Header.css'
 import Navbar from './Navbar'
+
+import '../Styles.css/Header.css'
 
 const Header = () => {
   return (

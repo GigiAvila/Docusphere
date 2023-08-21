@@ -7,7 +7,7 @@ import '../Styles.css/Main.css'
 
 const Main = () => {
   const [toggleButton, setToggleButton] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'false');
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
   const [showLogInForm, setShowLogInForm] = useState(true)
   const [showWelcomeMessage, setShowWelcomeMessage] = useState(false)
 

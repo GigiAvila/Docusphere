@@ -22,6 +22,9 @@ const LogIn = ({ isLoggedIn, handleLogin, handleLogout, showLogInForm, showWelco
   };
 
 
+  console.log(loginEmail)
+  console.log(loginPassword)
+
   return (
     <section className='LogIn'>
       <TitleLoginText isLoggedIn={isLoggedIn} />
