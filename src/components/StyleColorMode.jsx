@@ -1,7 +1,7 @@
 import React from 'react';
 import { useColorModeValue, useColorMode, Box, Switch, FormControl, FormLabel } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import '../Styles.css/Header.css'
+
 
 
 function StyleColorMode() {

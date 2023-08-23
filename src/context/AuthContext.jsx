@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setLocalStorageUser(null);
-    navigate("/", { replace: true });
+    navigate("/home", { replace: true });
     setShowLogInForm(true);
     setIsLoggedIn(false);
     localStorage.setItem('isLoggedIn', 'false');

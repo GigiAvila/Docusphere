@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Box, Divider, AbsoluteCenter, useColorMode } from '@chakra-ui/react';
 import { CLIENT_ID } from '../data/GoogleKey'
 
-import '../Styles.css/SignUpOptions.css';
+
 
 const SignUpOptions = () => {
   const { colorMode } = useColorMode();

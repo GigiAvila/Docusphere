@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+import styled from 'styled-components'
 import LogIn from './Login'
 import SignUp from './Signup';
 import ToggleButtonSection from './ToggleButtonSection';
 import { useAuth } from '../hooks/useAuth';
 
-import '../Styles.css/SigninPage.css'
+
+const MainContainer = styled.div`
+width: 70vw;
+height: 70vh;
+`
+
+
 
 const Signin = () => {
   const [toggleButton, setToggleButton] = useState(true);
@@ -16,11 +23,11 @@ const Signin = () => {
 
 
   return (
-    <div className='mainContainer'>
+    <MainContainer>
       <ToggleButtonSection onToggleChange={handleToggleChange} toggleButton={toggleButton} />
       {toggleButton ? <LogIn /> : <SignUp />}
 
-    </div>
+    </MainContainer>
   );
 }
 

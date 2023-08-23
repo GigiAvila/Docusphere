@@ -4,8 +4,29 @@ import SignInModal from './SignInModal'
 import SignUpOptions from './SignUpOptions'
 import { Input, Stack, InputGroup, InputRightElement, Tooltip, Button } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import '../Styles.css/SignUp.css'
+import styled from 'styled-components';
 
+const SignUpSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+`;
+
+const SignUpForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 35%;
+`;
+
+const SignUpSubmitButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 2vw;
+`;
 
 const SignUp = () => {
 
@@ -33,9 +54,9 @@ const SignUp = () => {
 
 
   return (
-    <section className='SignUp'>
+    <SignUpSection>
       <TitleSignUpText />
-      <form className='signUpForm' onSubmit={handleSubmit}>
+      <SignUpForm onSubmit={handleSubmit}>
         <Stack  >
           <label className='nameContainer'> Name
             <InputGroup>
@@ -98,19 +119,19 @@ const SignUp = () => {
               </InputRightElement>
             </InputGroup>
           </label>
-          <div className='signUpSubmitButtonContainer' >
+          <SignUpSubmitButtonContainer>
             <Tooltip hasArrow label='Sign up' bg='yellow.600'>
               <Stack direction='row' spacing={4}>
                 <Button className='signUpSubmitButton' variant='solid' colorScheme='telegram' type='submit'>Create your account</Button>
               </Stack>
             </Tooltip>
-          </div>
+          </SignUpSubmitButtonContainer>
         </Stack>
-      </form>
+      </SignUpForm>
       <SignUpOptions />
       {showModal && <SignInModal isOpen={showModal} onClose={handleCloseModal} />}
 
-    </section >
+    </SignUpSection >
   )
 }
 

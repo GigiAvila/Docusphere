@@ -1,12 +1,34 @@
 import React, { useState } from 'react'
+import styled from 'styled-components';
 import TitleLoginText from './TitleLoginText'
-import '../Styles.css/Login.css'
 import { Input, Stack, InputGroup, InputRightElement, Button, Tooltip } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { useAuth } from '../hooks/useAuth';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
+const LogInSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
+`;
 
+const LoginForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+`;
+
+const LoginSubmitButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 26vw;
+  margin-top: 2vw;
+  margin-right: 3vw;
+`;
 
 
 const LogIn = () => {
@@ -34,10 +56,10 @@ const LogIn = () => {
 
 
   return (
-    <section className='LogIn'>
+    <LogInSection >
       <TitleLoginText isLoggedIn={isLoggedIn} />
       {showLogInForm && isLoggedIn === false &&
-        <form className='LoginForm' onSubmit={handleSubmit}>
+        <LoginForm onSubmit={handleSubmit}>
           <Stack  >
             <label className='userNameContainer'> User Name
               <InputGroup>
@@ -93,19 +115,19 @@ const LogIn = () => {
                 </InputRightElement>
               </InputGroup>
             </label>
-            <div className='loginSubmitButtonContainer'>
+            <LoginSubmitButtonContainer>
               <Tooltip hasArrow label='Login' bg='yellow.600'>
                 <Stack direction='row' spacing={4}>
-                  <Button rightIcon={<ChevronRightIcon />} variant='solid' colorScheme='telegram' type='submit' onClick={handleSubmit}>Login</Button>
+                  <Button rightIcon={<ChevronRightIcon />} variant='solid' colorScheme='telegram' type='submit' >Login</Button>
                 </Stack>
               </Tooltip>
-            </div>
+            </LoginSubmitButtonContainer>
           </Stack>
-        </form>
+        </LoginForm>
       }
 
 
-    </section>
+    </LogInSection>
   )
 }
 

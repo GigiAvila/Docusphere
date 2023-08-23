@@ -1,19 +1,27 @@
-import React from 'react'
-import StyleColorMode from './StyleColorMode'
-import Navbar from './Navbar'
+import React from 'react';
+import styled from 'styled-components';
+import Navbar from './Navbar';
+import UserAvatar from './UserAvatar';
+import StyleColorMode from './StyleColorMode';
 
-import '../Styles.css/Header.css'
-import UserAvatar from './UserAvatar'
+const HeaderContainer = styled.header`
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+`;
 
 const Header = () => {
   return (
-    <header className='header'>
+    <HeaderContainer>
       <Navbar />
       <UserAvatar />
       <StyleColorMode />
-
-    </header>
-  )
+    </HeaderContainer>
+  );
 }
 
-export default Header
+export default Header;

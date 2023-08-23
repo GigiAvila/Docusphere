@@ -6,7 +6,7 @@ export const ProtectedLayout = () => {
   const { user } = useAuth();
   const { outlet } = useOutlet();
 
-  if (!user) return <Navigate to='/sigin' />;
+  if (user) return <Navigate to='/sigin' />;
 
   return (
     <>
