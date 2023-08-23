@@ -1,29 +1,37 @@
 import React, { useState } from 'react'
 import TitleLoginText from './TitleLoginText'
 import '../Styles.css/Login.css'
-import { Input, Stack, InputGroup, InputRightElement, Button } from '@chakra-ui/react'
+import { Input, Stack, InputGroup, InputRightElement, Button, Tooltip } from '@chakra-ui/react'
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import { useAuth } from '../hooks/useAuth';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
-import Welcome from './Welcome';
-import LoginButton from './LoginButton';
-import LogouButton from './LogoutButton';
 
-const LogIn = ({ isLoggedIn, handleLogin, handleLogout, showLogInForm, showWelcomeMessage }) => {
 
+
+const LogIn = () => {
+
+  const [userName, setuserName] = useState('')
   const [loginEmail, setLoginEmail] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
   const [showPassword, setShowPassword] = React.useState(false)
 
 
-  const handleShowPasswordChange = () => setShowPassword(!showPassword)
+  const { isLoggedIn, login, showLogInForm } = useAuth();
+  const { user, setLocalStorageUser } = useLocalStorage('user', null);
+
+
+  const handleShowPasswordChange = () => setShowPassword(!showPassword);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin();
+    const userData = { userName, loginEmail };
+    console.log(userData);
+    // setLocalStorageUser(userData); // Check this line
+    login(userData);
   };
 
 
-  console.log(loginEmail)
-  console.log(loginPassword)
 
   return (
     <section className='LogIn'>
@@ -31,6 +39,21 @@ const LogIn = ({ isLoggedIn, handleLogin, handleLogout, showLogInForm, showWelco
       {showLogInForm && isLoggedIn === false &&
         <form className='LoginForm' onSubmit={handleSubmit}>
           <Stack  >
+            <label className='userNameContainer'> User Name
+              <InputGroup>
+                <Input
+                  width='100%'
+                  size='lg'
+                  variant='filled'
+                  className='inputuser'
+                  type='text'
+                  placeholder='Introduce your username'
+                  required
+                  value={userName}
+                  onChange={(e) => setuserName(e.target.value)}
+                />
+              </InputGroup>
+            </label>
             <label className='emailContainer'> Email
               <InputGroup>
                 <Input
@@ -70,16 +93,15 @@ const LogIn = ({ isLoggedIn, handleLogin, handleLogout, showLogInForm, showWelco
                 </InputRightElement>
               </InputGroup>
             </label>
+            <div className='loginSubmitButtonContainer'>
+              <Tooltip hasArrow label='Login' bg='yellow.600'>
+                <Stack direction='row' spacing={4}>
+                  <Button rightIcon={<ChevronRightIcon />} variant='solid' colorScheme='telegram' type='submit' onClick={handleSubmit}>Login</Button>
+                </Stack>
+              </Tooltip>
+            </div>
           </Stack>
         </form>
-      }
-      {showWelcomeMessage && !showLogInForm && <Welcome isLoggedIn={isLoggedIn} />}
-      {
-        isLoggedIn === false ? (
-          <LoginButton handleLogin={handleLogin} />
-        ) : (
-          <LogouButton handleLogout={handleLogout} />
-        )
       }
 
 

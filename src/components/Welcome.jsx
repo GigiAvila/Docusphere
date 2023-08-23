@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import UserAvatar from '../assets/user.png'
 import '../Styles.css/Welcome.css'
 
-const Welcome = ({ isLoggedIn }) => {
+const Welcome = ({ isLoggedIn, userName }) => {
 
 
   return (
@@ -10,7 +10,7 @@ const Welcome = ({ isLoggedIn }) => {
       {isLoggedIn &&
         <div className='welcomeMessageContainer'>
           < img src={UserAvatar} alt='userPhotoAvatar' />
-          <h3 className='welcomeMessageText'>Welcome back, user!</h3>
+          <h3 className='welcomeMessageText'>¡ Welcome back {userName} !</h3>
         </div>
       }
     </section>
