@@ -8,19 +8,22 @@ const NavbarContainer = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   width: 90vw;
 `;
 
 const NavbarTitle = styled.h1`
-  font-family: 'Cornerstone';
+font-family: "Nunito";
   font-size: 1.3rem;
-  border: 4px solid white;
+  border: 4px solid ;
   padding: 5px 5px;
 
   a {
     text-decoration: none;
-    color: white;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.2vw;
 `;
 
 const NavbarList = styled.ul`
@@ -29,18 +32,19 @@ const NavbarList = styled.ul`
   justify-content: flex-start;
   align-items: center;
   gap: 2rem;
+
 `;
 
 const NavbarListItem = styled.li`
   list-style: none;
   font-size: 1vw;
   position: relative;
-  font-family: 'Cornerstone';
+  font-family: "Nunito";
   transition: font-size 0.2s;
 
   a {
     text-decoration: none;
-    color: white;
+
   }
 
   &:hover {
@@ -59,15 +63,26 @@ const NavbarListItem = styled.li`
     left: 0;
     width: 100%;
     height: 5px;
-    background-color: skyblue;
+    background-color: #f4e603;
     opacity: 0;
     transition: opacity 0.2s;
     border-radius: 2.5px;
   }
+
+  
+  @media (max-width: 768px) {
+    font-size: 3.8vw;
+
+    &:hover {
+      font-size: 4vw;
+    }
+  }
+
 `;
 
 const Navbar = () => {
   const { isLoggedIn } = useAuth();
+
 
   return (
     <NavbarContainer data-testid="navbar-component">

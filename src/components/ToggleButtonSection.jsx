@@ -12,11 +12,16 @@ const ToggleSignInButton = styled.h5`
   font-size: 1rem;
   position: absolute;
   right: 20px;
-  margin: 40px;
-  font-family: 'Cornerstone';
+  margin: 20px;
+  font-family: "Nunito";
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 5px;
 
   &:hover {
-    font-size: 1.3rem;
+    background-color: #ECC94B;
+    padding: 1rem;
+    border-radius: 5px;
   }
 `;
 

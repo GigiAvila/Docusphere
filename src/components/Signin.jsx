@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
-import LogIn from './Login'
+import Login from './Login'
 import SignUp from './Signup';
 import ToggleButtonSection from './ToggleButtonSection';
-import { useAuth } from '../hooks/useAuth';
 
 
 const MainContainer = styled.div`
@@ -25,7 +24,7 @@ const Signin = () => {
   return (
     <MainContainer>
       <ToggleButtonSection onToggleChange={handleToggleChange} toggleButton={toggleButton} />
-      {toggleButton ? <LogIn /> : <SignUp />}
+      {toggleButton ? <Login data-testid='login-component' /> : <SignUp data-testid='signup-component' />}
 
     </MainContainer>
   );

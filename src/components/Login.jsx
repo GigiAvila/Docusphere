@@ -5,14 +5,15 @@ import { Input, Stack, InputGroup, InputRightElement, Button, Tooltip } from '@c
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { useAuth } from '../hooks/useAuth';
 import { useLocalStorage } from '../hooks/useLocalStorage';
+import { useNavigate } from 'react-router-dom';
 
 const LogInSection = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 60vh;
+  height: 70vh;
 `;
 
 const LoginForm = styled.form`
@@ -33,7 +34,7 @@ const LoginSubmitButtonContainer = styled.div`
 
 const LogIn = () => {
 
-  const [userName, setuserName] = useState('')
+  const [userName, setUserName] = useState('')
   const [loginEmail, setLoginEmail] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
   const [showPassword, setShowPassword] = React.useState(false)
@@ -42,18 +43,19 @@ const LogIn = () => {
   const { isLoggedIn, login, showLogInForm } = useAuth();
   const { user, setLocalStorageUser } = useLocalStorage('user', null);
 
+  const navigate = useNavigate();
 
   const handleShowPasswordChange = () => setShowPassword(!showPassword);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const userData = { userName, loginEmail };
-    console.log(userData);
-    // setLocalStorageUser(userData); // Check this line
     login(userData);
+    navigate('/my-account');
+    // setLocalStorageUser(userData); // Check this line
   };
 
-
+  console.log(isLoggedIn)
 
   return (
     <LogInSection >
@@ -72,7 +74,7 @@ const LogIn = () => {
                   placeholder='Introduce your username'
                   required
                   value={userName}
-                  onChange={(e) => setuserName(e.target.value)}
+                  onChange={(e) => setUserName(e.target.value)}
                 />
               </InputGroup>
             </label>
@@ -118,7 +120,7 @@ const LogIn = () => {
             <LoginSubmitButtonContainer>
               <Tooltip hasArrow label='Login' bg='yellow.600'>
                 <Stack direction='row' spacing={4}>
-                  <Button rightIcon={<ChevronRightIcon />} variant='solid' colorScheme='telegram' type='submit' >Login</Button>
+                  <Button rightIcon={<ChevronRightIcon />} variant='solid' bgColor='#f4e603' type='submit' >Login</Button>
                 </Stack>
               </Tooltip>
             </LoginSubmitButtonContainer>

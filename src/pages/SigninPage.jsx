@@ -1,36 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
 import Signin from '../components/Signin'
-import BackgroundImg from '../assets/loginphoto.png'
-import Header from '../components/Header'
+import loginImg from '../assets/loginphoto.png'
 
-const MainWrapper = styled.section`
+const LoginWrapper = styled.section`
   width: 100vw;
   height: 70vh;
   display: flex;
   flex-direction: row;
 `;
 
-const BackgroundContainer = styled.div`
+const LoginImgContainer = styled.div`
   width: 35vw;
-  height: 80vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const BackgroundImage = styled.img`
+const LoginImage = styled.img`
   width: 90%;
   height: auto;
 `;
 const SignInPage = () => {
   return (
     <>
-      <Header />
-      <MainWrapper>
-        <BackgroundContainer><BackgroundImage src={BackgroundImg} alt="backgroundImg" /></BackgroundContainer>
+      <LoginWrapper>
+        <LoginImgContainer><LoginImage src={loginImg} alt="loginImg" /></LoginImgContainer>
         <Signin />
-      </MainWrapper>
+      </LoginWrapper>
     </>
   )
 }

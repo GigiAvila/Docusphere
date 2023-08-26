@@ -12,7 +12,7 @@ const SignUpSection = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 70%;
+  height: 70vh;
 `;
 
 const SignUpForm = styled.form`
@@ -122,7 +122,7 @@ const SignUp = () => {
           <SignUpSubmitButtonContainer>
             <Tooltip hasArrow label='Sign up' bg='yellow.600'>
               <Stack direction='row' spacing={4}>
-                <Button className='signUpSubmitButton' variant='solid' colorScheme='telegram' type='submit'>Create your account</Button>
+                <Button className='signUpSubmitButton' variant='solid' bgColor='#f4e603' type='submit'>Create your account</Button>
               </Stack>
             </Tooltip>
           </SignUpSubmitButtonContainer>

@@ -2,6 +2,8 @@
  * @vitest-environment jsdom
 */
 
+// TEST DE RENDERIZACION DEL TEXTO
+
 import { describe, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import Footer from '../components/Footer'

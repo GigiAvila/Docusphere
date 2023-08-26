@@ -17,11 +17,7 @@ function App() {
 
   return (
     <AppContainer >
-      <Header />
       <Main />
-      <Footer />
-
-
     </AppContainer>
   )
 }

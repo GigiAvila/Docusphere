@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { SIGNUP_TEXT, SIGNUP_TITLE } from '../data/TitleTexts';
+
 
 const TitleSignUpContainer = styled.div`
   width: 100%;
@@ -8,25 +10,25 @@ const TitleSignUpContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   padding-left: 32%;
-  padding-top: 8vw;
+  padding-top: 1vw;
 
   > h3 {
     font-size: 3rem;
-    font-family: 'Cornerstone';
+    font-family: "Nunito";
   }
 
   > h5 {
     font-size: 1.5rem;
     margin-bottom: 2vw;
-    font-family: 'Cornerstone';
+    font-family: "Nunito";
   }
 `;
 
 const TitleSignUpText = () => {
   return (
     <TitleSignUpContainer>
-      <h3>Create your account</h3>
-      <h5>Please fill your information below</h5>
+      <h3>{SIGNUP_TITLE}</h3>
+      <h5>{SIGNUP_TEXT}</h5>
     </TitleSignUpContainer>
   )
 }
