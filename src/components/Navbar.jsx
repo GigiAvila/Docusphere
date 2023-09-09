@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
 const NavbarContainer = styled.nav`
@@ -9,7 +9,12 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width: 90vw;
+  width: 100%;
+
+  @media (max-width:768px){
+    width: 100%;
+  
+  }
 `;
 
 const NavbarTitle = styled.h1`
@@ -37,18 +42,27 @@ const NavbarList = styled.ul`
 
 const NavbarListItem = styled.li`
   list-style: none;
-  font-size: 1vw;
+  font-weight: 300;
   position: relative;
   font-family: "Nunito";
   transition: font-size 0.2s;
+  border: 0.2vw solid transparent;
 
   a {
     text-decoration: none;
-
+    color: inherit; 
+    position: relative; 
+    z-index: 1; 
   }
 
   &:hover {
-    font-size: 1.2vw;
+    font-size: 1vw;
+    a {
+      background: linear-gradient(#fcc484, #e35a34);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
   }
 
   &:hover::after {
@@ -69,7 +83,6 @@ const NavbarListItem = styled.li`
     border-radius: 2.5px;
   }
 
-  
   @media (max-width: 768px) {
     font-size: 3.8vw;
 
@@ -77,40 +90,56 @@ const NavbarListItem = styled.li`
       font-size: 4vw;
     }
   }
-
 `;
 
+
+
 const Navbar = () => {
+  const location = useLocation();
   const { isLoggedIn } = useAuth();
 
+  const isAppPage = location.pathname === '/';
+
+
+  const scrollToElement = (ref) => {
+    console.log('scrollToElement ejecutandose')
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   return (
     <NavbarContainer data-testid="navbar-component">
       <NavbarTitle>
-        <Link to="/home">DOCUSPHERE</Link>
+        <Link to="/#home">DOCUSPHERE</Link>
       </NavbarTitle>
       <NavbarList>
         <NavbarListItem>
-          <Link to="/home">Home</Link>
+          {!isAppPage ? (
+            <Link to="/#home" >Home</Link>
+          ) : (
+            <a href="#home" >Home</a>
+          )}
         </NavbarListItem>
         <NavbarListItem>
-          <Link to="/about">About</Link>
+          {!isAppPage ? (
+            <Link to="/#about" onClick={() => scrollToElement(aboutRef)}>About</Link>
+          ) : (
+            <a href="#about" >About</a>
+          )}
         </NavbarListItem>
         <NavbarListItem>
-          <Link to="/blog">Blog</Link>
+          <Link to="/pricingOptions">Pricing</Link>
         </NavbarListItem>
-        <NavbarListItem>
-          <Link to="/contact">Contact</Link>
-        </NavbarListItem>
-        {!isLoggedIn && (
+        {!isLoggedIn ? (
           <NavbarListItem>
             <Link to="/signin">Sign In</Link>
           </NavbarListItem>
-        )}
+        ) : null}
+
       </NavbarList>
     </NavbarContainer>
   );
-}
+};
 
 export default Navbar;
-

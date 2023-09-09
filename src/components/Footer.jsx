@@ -1,30 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import UpperFooter from './Footer/UpperFooter';
+import LowerFooter from './Footer/LowerFooter';
 
 const FooterContainer = styled.footer`
-  width: 100vw;
-  height: auto;
-  position: absolute;
-  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
-const FooterText = styled.p`
-font-family: "Nunito";
-  font-size: 1vw;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-
-  
-  @media (max-width: 768px) {
-    font-size: 3vw;
-  }
-`;
 
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterText>Created with love by Gigi Avila 🤖</FooterText>
+      <UpperFooter />
+      <LowerFooter />
     </FooterContainer>
   );
 }

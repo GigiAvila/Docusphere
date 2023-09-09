@@ -1,5 +1,5 @@
 import React from 'react'
-import userAvatar from '../assets/user.png'
+import userAvatar from '../assets/user.gif'
 import { Link } from 'react-router-dom'
 import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
 import { useAuth } from '../hooks/useAuth';
@@ -19,6 +19,11 @@ const AvatarImgWrapper = styled.div`
   &:hover {
     width: 3.3vw;
   }
+
+@media (max-width:768px){
+  width: 7vw;
+
+}
 `;
 
 
@@ -29,7 +34,7 @@ const UserAvatar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/home');
+    navigate('/');
   };
 
   return (
