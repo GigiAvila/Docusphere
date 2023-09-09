@@ -30,7 +30,7 @@ I have also practiced using LocalStorage in the SignIn section. You are free to 
 10. React Testing Library
 
 # Clone this repo
-git clone [https://github.com/tuusuario/tuproyecto.git](https://github.com/GigiAvila/MERN4.git)
+git clone https://github.com/GigiAvila/MERN4.git
 
 # Navigate to the directory
 cd MERN4
