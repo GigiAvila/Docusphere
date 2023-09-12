@@ -75,6 +75,10 @@ padding: 2vw;
 background: linear-gradient(to right, #c2a8e6, #0000ff);
     -webkit-background-clip: text;
     color: transparent;
+
+    @media (max-width: 768px) {
+      font-size: 6vw;
+    }
 `
 
 

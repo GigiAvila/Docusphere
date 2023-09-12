@@ -9,7 +9,7 @@ const MyAccountContainer = styled.section`
   background-color: rgba(194, 168, 230, 0.2);
   height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 1vw;
   padding-top: 10vw;
@@ -18,7 +18,8 @@ const MyAccountContainer = styled.section`
     flex-direction: column;
     padding: 23vw 3vw 3vw 3vw;
     gap: 1vw;
-    height: 75vh;
+    height: auto;
+   
   }
   
 `;

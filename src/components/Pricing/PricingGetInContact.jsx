@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const GetInTouchSection = styled.section`
+const GetInTouchSection = styled.div`
 display:flex;
 flex-direction: column;
 justify-content: flex-start;

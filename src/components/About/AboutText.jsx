@@ -70,8 +70,8 @@ align-items: center;
     color: transparent;
 
   @media (max-width: 768px) {
-    font-size: 3vw;
-    width: 20vw
+    font-size: 8vw;
+
   }
 }
 
@@ -86,7 +86,7 @@ align-items: center;
   
 
   @media (max-width: 768px) {
-    font-size: 5vw;
+    font-size: 6vw;
     padding: 3vw 0vw;
   }
 }
@@ -161,9 +161,9 @@ const Title = styled.h5`
   margin: 8px 0;
 
   @media (max-width: 768px) {
-    width: 50vw;
+    width: 100vw;
     height: auto;
-    font-size: 3vw;
+    font-size: 5vw;
   }
 `;
 
@@ -172,9 +172,9 @@ const Description = styled.p`
   font-weight: 300;
   
   @media (max-width: 768px) {
-    width: 50vw;
+    width: 100vw;
     height: auto;
-    font-size: 2.5vw;
+    font-size: 4vw;
    
   }
 `;

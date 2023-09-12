@@ -28,6 +28,10 @@ const AssistantTitleSection = styled.div`
 const AssistantImageContainer = styled.div`
   width: 5vw;
   padding: 1vw;
+  
+  @media (max-width: 768px) {
+    width: 10vw;
+  }
 
 `;
 
@@ -36,9 +40,7 @@ const AssistantImage = styled.img`
   height: auto;
   border-radius: 50%;
 
-  @media (max-width: 768px) {
-    width: 10vw;
-  }
+  
 `;
 const VirtualAssistantTitle = styled.h3`
 line-height: 2.5;

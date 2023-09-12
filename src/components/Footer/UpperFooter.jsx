@@ -15,7 +15,9 @@ width: 100%;
 padding: 0.5vw;
 
 @media (max-width: 768px) {
-  flex-direction: row;
+  flex-direction: column;
+  gap: 5vw;
+  padding-left: 5vw;
 }
 `
 

@@ -12,6 +12,11 @@ gap: 0.5vw;
 
 const LanguageLabel = styled.label`
 font-weight: bold;
+font-size: 0.8vw;
+
+@media (max-width:768px){
+  font-size: 2.8vw;
+}
 `
 
 const LanguageSelect = styled.select`

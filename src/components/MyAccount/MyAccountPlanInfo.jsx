@@ -11,7 +11,7 @@ const MyAccountPlanInfo = () => {
   margin-bottom: 1vw;
 
   @media (max-width: 768px) {
-    font-size: 3vw;
+    font-size: 5vw;
   }
 `
 
@@ -28,7 +28,7 @@ const MyAccountPlanInfo = () => {
   background-color: white;
  
 @media (max-width: 768px) {
-  width: 55vw;
+  width: 95vw;
     height: auto;
 }
 `;
@@ -45,7 +45,7 @@ font-size:0.8vw;
 border-bottom: 1px solid #f2f2f2;
 
 @media (max-width: 768px) {
-  font-size: 2.8vw;
+  font-size: 4vw;
 }
 `
 
@@ -54,7 +54,7 @@ font-size:0.8vw;
 font-weight:300;
 
 @media (max-width: 768px) {
-  font-size: 2.8vw;
+  font-size: 4vw;
   padding: 0.5vw;
 }
 `
@@ -68,7 +68,7 @@ font-size: 0.7vw;
 font-weight: 300;
 
 @media (max-width: 768px) {
-  font-size: 2vw;
+  font-size: 4vw;
 }
 
 `
@@ -81,7 +81,7 @@ font-size: 0.7vw;
 font-weight: 300;
 
 @media (max-width: 768px) {
-  font-size: 2vw;
+  font-size: 4vw;
 }
 
 `

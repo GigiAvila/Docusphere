@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../Header';
-import Footer from '../Footer';
 import styled from 'styled-components';
 import { Input, Stack, InputGroup, InputRightElement, Button, Tooltip } from '@chakra-ui/react';
 import AvatarImg from '../../assets/Avatar.png'
@@ -17,7 +15,7 @@ const AccountSection = styled.section`
   border-radius: 15px;
 
   @media (max-width: 768px) {
-    width: 55vw;
+    width: 95vw;
     height: auto;
   }
 `;
@@ -51,11 +49,11 @@ const ChangePhotoButton = styled.label`
   font-size: 0.8vw;
 
   @media (max-width: 768px) {
-    font-size: 2vw;
+    font-size: 3.5vw;
   }
 `;
 
-const HiddenFileInput = styled.input`
+const FileInput = styled.input`
   display: none;
 `;
 
@@ -66,7 +64,7 @@ text-align: start;
 padding: 1vw;
 
 @media (max-width: 768px) {
-  font-size: 3vw;
+  font-size: 5vw;
 }
 `
 
@@ -109,7 +107,7 @@ font-size:0.8vw;
 border-bottom: 1px solid #f2f2f2;
 
 @media (max-width: 768px) {
-  font-size: 2.8vw;
+  font-size: 4vw;
 }
 `
 
@@ -119,7 +117,7 @@ font-weight:300;
 
 
 @media (max-width: 768px) {
-  font-size: 2.8vw;
+  font-size: 4vw;
   font-weight:300;
 }
 `
@@ -132,8 +130,8 @@ font-size: 0.7vw;
 font-weight: 300;
 
 @media (max-width: 768px) {
-  font-size: 2.3vw;
-  padding: 1.3vw 2vw;
+  font-size: 4vw;
+  padding: 2vw 2.5vw;
 }
 
 `
@@ -146,7 +144,7 @@ font-size: 0.7vw;
 font-weight: 300;
 
 @media (max-width: 768px) {
-  font-size: 2.3vw;
+  font-size: 4vw;
   padding: 1.3vw 2vw;
 }
 
@@ -182,7 +180,7 @@ const MyAccountData = () => {
           <AvatarImage src={AvatarImg} alt="UserPhoto" />
           <ChangePhotoButton>
             New Photo
-            <HiddenFileInput type="file" accept="image/*" onChange={handlePhotoUpload} />
+            <FileInput type="file" accept="image/*" onChange={handlePhotoUpload} />
           </ChangePhotoButton>
         </AvatarContainer>
         <MyAccountTitle>My Account</MyAccountTitle>

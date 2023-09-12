@@ -21,6 +21,10 @@ const Partners = () => {
   background: linear-gradient(to right, #c2a8e6, #0000ff);
   -webkit-background-clip: text;
   color: transparent;
+
+  @media (max-width:768px) {
+    font-size: 6vw;
+  }
   `
 
 
@@ -40,7 +44,7 @@ const Partners = () => {
   height: auto;
 
   @media (max-width: 768px){
-    width: 20vw;
+    width: 25vw;
   }
 `
 

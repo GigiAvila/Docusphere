@@ -36,7 +36,7 @@ const TestimonialTitle = styled.h3`
   color: transparent;
 
   @media (max-width: 768px) {
-    font-size: 3vw;
+    font-size: 8vw;
   }
 `;
 
@@ -50,18 +50,7 @@ const TestimonialSubtitle = styled.h5`
   color: transparent;
 
   @media (max-width: 768px) {
-    font-size: 5vw;
-  }
-`;
-
-const TestimonialText = styled.p`
-  font-size: 1.2vw;
-  padding: 1vw 0vw;
-  line-height: 2;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 2vw;
+    font-size: 6vw;
   }
 `;
 
@@ -215,11 +204,6 @@ const Testimonies = () => {
       <TestimoniesTextWrapper>
         <TestimonialTitle>Testimonies</TestimonialTitle>
         <TestimonialSubtitle>What Clients Say</TestimonialSubtitle>
-        <TestimonialText>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus quidem deleniti
-          recusandae! Deserunt obcaecati dolore soluta cum, sed rerum nemo molestiae itaque
-          recusandae culpa magnam veritatis quis dicta ducimus. Consequatur?
-        </TestimonialText>
       </TestimoniesTextWrapper>
       <TestimoniesSlider>
         <TestimoniesSliderContent style={{ transform: `translateX(-${currentIndex * (100 / testimonies.length)}%)` }}>

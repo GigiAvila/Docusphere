@@ -7,33 +7,33 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 
-const PricingSection = styled.section`
+
+const PricingSection = styled.div`
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   background-color:rgb(194, 168, 230, 0.2);
+  padding: 8vw 0 ;
 
   @media (max-width: 768px) {
-    padding-top: 2vw;
-    overflow: hidden;
-    overflow-y: auto;
+    padding: 20vw 0 ;
+  
 
   }
 `;
 
 
-const PricingCardSection = styled.section`
+const PricingCardSection = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
 
   @media (max-width: 768px) {
-    padding-top: 2vw;
+   
   }
 `;
 

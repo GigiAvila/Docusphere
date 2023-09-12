@@ -35,10 +35,11 @@ width: 25vw;
 const CompanyNameFooter = styled.h3`
 font-size: 0.8vw;
 border: 3px solid;
-padding: 8px 16px;
+padding: 0.5vw 1vw;
 
 @media (max-width: 768px) {
-  font-size: 1.8vw;
+  font-size: 3vw;
+  border: 3px solid;
 
 }`
 
@@ -46,7 +47,7 @@ const CompanyTextFooter = styled.h5`
 font-weight: 200;
 
 @media (max-width: 768px) {
-  font-size: 2.8vw;
+  display:none;
 
 }`
 
@@ -56,10 +57,17 @@ const SocialMediaContainer = styled.ul`
   justify-content: flex-start;
   align-items: center;
   margin-top: 1vw;
+  width: 25vw;
+  flex-wrap: wrap;
 `
 
 const SocialMediaLink = styled.li`
 list-style-type: none;
+
+@media (max-width: 768px) {
+  width: 5vw;
+
+}
 
 `
 
@@ -68,7 +76,8 @@ width: 2vw;
 height: auto;
 
 @media (max-width: 768px) {
-  width: 5vw;
+  width: 6vw;
+
 
 }
 

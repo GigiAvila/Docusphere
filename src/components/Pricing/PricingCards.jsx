@@ -5,14 +5,16 @@ import { Link } from 'react-router-dom'
 
 
 const PaymentOptionsWrapper = styled.div`
-  height: 70vh;
+  height: auto;
   display: flex;
   align-items: center;
 
 
   @media (max-width: 768px) {
     flex-direction: column;
-    width: 90vw;
+    width: 100vw;
+
+
   }
 `;
 
@@ -31,9 +33,9 @@ const Tag = styled.h6`
   align-items: center;
 
   @media (max-width: 768px) {
-    width: 12vw;
-    height: 3vh;
-    font-size: 2vw;
+    width: 20vw;
+    height: 4vh;
+    font-size: 3.5vw;
   }
 `;
 
@@ -114,7 +116,7 @@ const PaymentOption = styled.div`
 
   &:hover {
     background-color: #65D3AC;
-    height: 68vh;
+    
   }
 
   &:hover ${Tag} {
@@ -132,7 +134,8 @@ const PaymentOption = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 80%;
+    width: 90vw;
+    height: auto;
   
   }
 `;
@@ -165,7 +168,7 @@ const PlanTitle = styled.h4`
   padding: 1vw 0;
 
   @media (max-width: 768px) {
-    font-size: 4vw;
+    font-size: 5vw;
   }
 `;
 
@@ -181,7 +184,7 @@ const PlanPrice = styled.h2`
   padding: 0.5vw 0;
 
   @media (max-width: 768px) {
-    font-size: 3.8vw;
+    font-size: 4vw;
   }
 `;
 
@@ -189,7 +192,7 @@ const PriceFrequency = styled.h5`
   font-size: 0.7vw;
 
   @media (max-width: 768px) {
-    font-size: 3.5vw;
+    font-size: 4vw;
     padding-left: 1.5vw;
   }
 `;
@@ -201,7 +204,7 @@ const PlanSubtitle = styled.h4`
   text-transform: uppercase;
 
   @media (max-width: 768px) {
-    font-size: 2vw;
+    font-size: 4vw;
   }
 `;
 
@@ -219,7 +222,7 @@ const Feature = styled.li`
   }
 
   @media (max-width: 768px) {
-    font-size: 2vw;
+    font-size: 4vw;
     display: ${props => (props.lineThrough ? 'none' : 'block')};
   }
 `;
@@ -251,7 +254,7 @@ const BuyButton = styled.button`
   display: inline-block;
   font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
   font-size: 0.8vw;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
   outline: none;
   overflow: hidden;
@@ -266,12 +269,14 @@ const BuyButton = styled.button`
   z-index: 1;
   position: absolute;
   bottom: 1.8vw;
+  height: auto;
 
   @media (max-width: 768px) {
-    font-size: 1.9vw;
-    width: 30vw;
-    height: 3.5vh;
-    margin-bottom: 3vw
+    font-size: 3vw;
+    width: 45vw;
+    margin-bottom: 4vw;
+    font-weight: 300;
+    position: relative;
   }
 `;
 
@@ -282,7 +287,7 @@ const StyledText = styled.p`
   padding: 0.5vw;
 
   @media (max-width: 768px) {
-    font-size: 2vw
+    font-size: 3vw
   }
 `;
 
@@ -300,7 +305,7 @@ const PricingSale = styled(Link)`
   z-index: 2;
 
   @media (max-width: 768px) {
-    font-size: 2vw;
+    font-size: 3vw;
   
   }
 }`
