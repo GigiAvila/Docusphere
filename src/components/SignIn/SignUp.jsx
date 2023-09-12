@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import TitleSignUpText from './TitleSignUpText'
 import SignInModal from './SignInModal'
-import SignUpOptions from './SignUpOptions'
+
 import { Input, Stack, InputGroup, InputRightElement, Tooltip, Button } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import styled from 'styled-components';
@@ -142,7 +142,7 @@ const SignUp = () => {
             </SignUpSubmitButtonContainer>
           </Stack>
         </SignUpForm>
-        <SignUpOptions />
+
         {showModal && <SignInModal isOpen={showModal} onClose={handleCloseModal} />}
 
       </SignUpSection >
