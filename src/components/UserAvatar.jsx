@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import userAvatar from '../assets/user.gif'
 import { Link } from 'react-router-dom'
 import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'

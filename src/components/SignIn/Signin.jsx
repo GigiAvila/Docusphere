@@ -32,7 +32,7 @@ const Signin = () => {
   return (
     <SigninContainer>
       <StyledToggleButtonContainer>
-        <ToggleButtonSection onToggleChange={handleToggleChange} toggleButton={toggleButton} />
+        <ToggleButtonSection onToggleChange={handleToggleChange} toggleButton={toggleButton} data-testid='toggle-button' />
       </StyledToggleButtonContainer>
       {toggleButton ? <Login data-testid='login-component' /> : <SignUp data-testid='signup-component' />}
     </SigninContainer>

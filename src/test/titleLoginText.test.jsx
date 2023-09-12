@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import TitleLoginText from '../components/TitleLoginText';
+import TitleLoginText from '../components/SignIn/TitleLoginText';
 import { LOGIN_TEXT, LOGIN_TITLE } from '../data/TitleTexts';
 
 describe('TitleLoginText', () => {

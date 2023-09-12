@@ -9,7 +9,7 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%;
+  width: 90vw;
 
   @media (max-width:768px){
     width: 100%;

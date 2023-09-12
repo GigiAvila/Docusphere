@@ -1,55 +1,33 @@
-import React, { useEffect } from 'react';
-import { Box, Divider, AbsoluteCenter, useColorMode } from '@chakra-ui/react';
-import { CLIENT_ID } from '../../data/GoogleKey'
-import styled from 'styled-components'
+import React from 'react';
+import { GoogleLogin } from 'react-google-login';
+import { CLIENT_ID } from '../../data/GoogleKey';
+import styled from 'styled-components';
 
-
-const StyledSingInWithGoogleOption = styled.div`
-
-@media (max-width: 768px) {
-width: 65vw;
-height: 10vh;
-}
-`
+const GoogleLoginContainer = styled.div`
+padding: 2vw;
+  @media (max-width: 768px) {
+    width: 65vw;
+    height: 10vh;
+  }
+`;
 
 const SignUpOptions = () => {
-  const { colorMode } = useColorMode();
-
-  const bgColor = colorMode === 'dark' ? 'gray.800' : 'white';
-  const textColor = colorMode === 'dark' ? 'white' : 'gray.800';
-
-
-  function handleCallbackResponse(response) {
-
-  }
-
-  useEffect(() => {
-    google.accounts.id.initialize({
-      client_id: CLIENT_ID,
-      callback: handleCallbackResponse
-    })
-
-    google.accounts.id.renderButton(
-      document.getElementById("signInDiv"),
-
-
-
-
-      { theme: "outline", size: "large" }
-    );
-  }, [])
+  const responseGoogle = (response) => {
+    console.log(response);
+  };
 
   return (
-    <section className='signUpOptions'>
-      <Box position='relative' padding='10'>
-        <Divider />
-        <AbsoluteCenter bg={bgColor} px='4' color={textColor}>
-          <p>or</p>
-        </AbsoluteCenter>
-      </Box>
-      <StyledSingInWithGoogleOption id='signInDiv'></StyledSingInWithGoogleOption>
-    </section>
+    <GoogleLoginContainer>
+      <GoogleLogin
+        clientId='863935766587-96ls4m5v5rsgg4mue3djnpf5e0ghnr40.apps.googleusercontent.com'
+        buttonText="Iniciar sesión con Google"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+        cookiePolicy={'single_host_origin'}
+      />
+    </GoogleLoginContainer>
   );
 };
+
 
 export default SignUpOptions;

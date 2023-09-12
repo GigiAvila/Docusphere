@@ -2,13 +2,14 @@
  * @vitest-environment jsdom
 */
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import Signin from '../components/Signin';
+import { render } from '@testing-library/react';
+import Signin from '../components/SignIn/Signin';
 
-describe('Signin Component', () => {
-  test('should render Signin component with toggle', () => {
-    render(<Signin />);
+test('renders Signin component with toggle button', () => {
+  const { getByTestId } = render(<Signin />);
+  const signinComponent = getByTestId('signin-component');
+  const toggleButton = getByTestId('toggle-button');
 
-
-  });
+  expect(signinComponent).toBeInTheDocument();
+  expect(toggleButton).toBeInTheDocument();
 });

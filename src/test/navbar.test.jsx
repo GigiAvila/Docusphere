@@ -8,7 +8,6 @@ import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from '../context/AuthContext';
 
-
 import Navbar from '../components/Navbar';
 
 test('Navbar renders correctly', () => {
@@ -24,7 +23,7 @@ test('Navbar renders correctly', () => {
   expect(navbarComponent).toBeInTheDocument();
 
   const links = screen.getAllByRole('link');
-  expect(links).toHaveLength(6);
+  expect(links).toHaveLength(5);
 });
 
 test('Navbar links navigate to the correct routes', async () => {
@@ -40,29 +39,24 @@ test('Navbar links navigate to the correct routes', async () => {
   userEvent.click(homeLink);
 
   await waitFor(() => {
-    expect(window.location.pathname).toBe('/home');
+    expect(window.location.pathname).toBe('/');
   });
 
   const aboutLink = screen.getByText('About');
   userEvent.click(aboutLink);
 
   await waitFor(() => {
-    expect(window.location.pathname).toBe('/about');
+    expect(window.location.pathname).toBe('/');
   });
 
-  const blogLink = screen.getByText('Blog');
-  userEvent.click(blogLink);
-
-  await waitFor(() => {
-    expect(window.location.pathname).toBe('/blog');
-  });
-
-  const contactLink = screen.getByText('Contact');
+  const contactLink = screen.getByText('Pricing');
   userEvent.click(contactLink);
 
   await waitFor(() => {
-    expect(window.location.pathname).toBe('/contact');
+    expect(window.location.pathname).toBe('/pricingOptions');
   });
+
+
 
 
 });

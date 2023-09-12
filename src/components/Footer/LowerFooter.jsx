@@ -1,6 +1,6 @@
 import React from 'react'
 import TermsConditionsAndPolicy from './TermsConditionsAndPolicy'
-import Languaje from './Languaje'
+import Language from './Language'
 import styled from 'styled-components'
 
 const LowerFooterContainer = styled.div`
@@ -20,7 +20,7 @@ const LowerFooter = () => {
   return (
     <LowerFooterContainer>
       <TermsConditionsAndPolicy />
-      <Languaje />
+      <Language />
     </LowerFooterContainer>
   )
 }

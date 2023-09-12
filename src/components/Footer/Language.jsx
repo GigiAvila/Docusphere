@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const LanguajeSelectContainer = styled.div`
+const LanguageSelectContainer = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
@@ -10,11 +10,11 @@ width: 50vw;
 gap: 0.5vw;
 `
 
-const LanguajeLabel = styled.label`
+const LanguageLabel = styled.label`
 font-weight: bold;
 `
 
-const LanguajeSelect = styled.select`
+const LanguageSelect = styled.select`
 background-color: #f2f2f2; 
 border-radius:10px;
 padding: 8px;
@@ -28,7 +28,7 @@ width: 8vw;
 }`
 
 
-const LenguajeOption = styled.option`
+const LanguageOption = styled.option`
 font-size: 0.8vw;
 font-weight:300;
 
@@ -39,13 +39,13 @@ font-weight:300;
 
 const Language = () => {
   return (
-    <LanguajeSelectContainer>
-      <LanguajeLabel htmlFor="languageSelect"></LanguajeLabel>
-      <LanguajeSelect id="languageSelect">
-        <LenguajeOption value="English">English</LenguajeOption>
-        <LenguajeOption value="Spanish">Spanish</LenguajeOption>
-      </LanguajeSelect>
-    </LanguajeSelectContainer>
+    <LanguageSelectContainer>
+      <LanguageLabel htmlFor="languageSelect">Language</LanguageLabel>
+      <LanguageSelect id="languageSelect">
+        <LanguageOption value="English">English</LanguageOption>
+        <LanguageOption value="Spanish">Spanish</LanguageOption>
+      </LanguageSelect>
+    </LanguageSelectContainer>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
-import Signin from '../components/Signin/Signin';
+import Signin from '../components/SignIn/Signin';
 import loginImg from '../assets/loginphoto3.png';
 import Header from '../components/Header';
 import Footer from '../components/Footer';

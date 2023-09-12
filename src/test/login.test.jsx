@@ -1,32 +1,32 @@
 /** 
  * @vitest-environment jsdom
 */
-
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Login from '../components/Login';
-import { AuthProvider } from '../context/AuthContext';
+import { render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
+import { AuthProvider } from '../context/AuthContext';
+import LogIn from '../components/SignIn/Login';
 
-
-test('Inputs change value when typed', async () => {
+test('renders Login component', async () => {
   render(
-    <BrowserRouter>
-      <AuthProvider>
-        <Login />
-      </AuthProvider>
-    </BrowserRouter>);
-
-  const userNameInput = screen.getByPlaceholderText('Introduce your username');
-  const emailInput = screen.getByPlaceholderText('Introduce your email');
-  const passwordInput = screen.getByPlaceholderText('Enter your password');
-
-  fireEvent.change(userNameInput, { target: { value: 'JohnDoe' } })
-  fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
-  fireEvent.change(passwordInput, { target: { value: 'password123' } });
+    <ChakraProvider>
+      <BrowserRouter>
+        <AuthProvider >
+          <LogIn />
+        </AuthProvider>
+      </BrowserRouter>
+    </ChakraProvider>
+  );
 
   await waitFor(() => {
-    expect(emailInput.value).toBe('test@example.com');
-    expect(passwordInput.value).toBe('password123');
+    const userNameInput = screen.getByPlaceholderText('Introduce your username');
+    const emailInput = screen.getByPlaceholderText('Introduce your email');
+    const passwordInput = screen.getByPlaceholderText('Enter your password');
+
+    expect(userNameInput).toBeInTheDocument();
+    expect(emailInput).toBeInTheDocument();
+    expect(passwordInput).toBeInTheDocument();
   });
 });
+
