@@ -89,7 +89,7 @@ const TestimoniesSlider = styled.div`
 
 const TestimoniesItem = styled.div`
   min-width: 30vw;
-  height: 25vh;
+  height: auto;
   background-color: #fff;
   border-radius: 10px;
   padding: 1vw;
