@@ -11,6 +11,10 @@ const UserButton = styled(MenuButton)`
   width: 3vw;
   height: auto;
   margin: 2vw;
+
+  @media (max-width:768px){
+    width: 7vw;
+
 `;
 
 const AvatarImgWrapper = styled.div`

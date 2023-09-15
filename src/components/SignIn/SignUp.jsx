@@ -5,7 +5,7 @@ import SignInModal from './SignInModal'
 import { Input, Stack, InputGroup, InputRightElement, Tooltip, Button } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import styled from 'styled-components';
-import GlobalStyles from '../../components/GlobalStyles';
+
 
 const SignUpSection = styled.div`
   display: flex;
@@ -66,7 +66,7 @@ const SignUp = () => {
 
   return (
     <>
-      <GlobalStyles />
+
       <SignUpSection>
         <TitleSignUpText />
         <SignUpForm onSubmit={handleSubmit}>

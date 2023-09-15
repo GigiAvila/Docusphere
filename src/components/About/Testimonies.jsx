@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { testimonies } from '../../data/Testimonies';
 import styled, { keyframes } from 'styled-components';
+
 
 const StyledTestimoniesWrapper = styled.div`
   width: 100%;
@@ -9,7 +10,9 @@ const StyledTestimoniesWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3vw;
+  padding: 2vw;
+  overflow: hidden;
+
 `;
 
 const TestimoniesTextWrapper = styled.div`
@@ -54,72 +57,53 @@ const TestimonialSubtitle = styled.h5`
   }
 `;
 
-const TestimoniesSlider = styled.div`
-  width: 100%;
-  height: 65vh;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2vw;
-  overflow: hidden;
-  padding: 1vw;
-
-  @media (max-width: 768px) {
-    height: 28vh;
-  }
-`;
-
 const slideFromLeftAnimation = keyframes`
 0% {
   transform: translateX(0);
 }
 100% {
-  transform: translateX(-100%);
+  transform: translateX(-180%);
 }
 `;
 
-const slideFromRightAnimation = keyframes`
-0% {
-  transform: translateX(0);
-}
-100% {
-  transform: translateX(100%);
-}
-`;
-
-const TestimoniesSliderContent = styled.div`
+const TestimoniesSlider = styled.div`
+  width: 100%;
+  height: 30vh;
   display: flex;
-  animation: ${slideFromLeftAnimation} 20s linear infinite;
-  animation-play-state: running;
-  animation-iteration-count: infinite;
-  animation-delay: -20s;
-  will-change: transform;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1vw;
+  padding: 1vw 0vw;
+ 
 
 
-  &:nth-child(2) {
-    animation: ${slideFromRightAnimation} 20s linear infinite;
-    animation-play-state: running;
-    animation-iteration-count: infinite;
-    animation-delay: -20s;
-    will-change: transform;
+  @media (max-width: 768px) {
+   gap: 2vw;
+  
   }
 `;
 
+
+
+
 const TestimoniesItem = styled.div`
-  min-width: 20vw;
-  height: 28vh;
-  margin: 0.5vw;
-  padding: 1vw;
-  opacity: 1;
+  min-width: 30vw;
+  height: 25vh;
   background-color: #fff;
   border-radius: 10px;
+  padding: 1vw;
   box-shadow: 0 4px 9px rgba(241, 241, 244, 0.72);
+  animation: ${slideFromLeftAnimation} 60s linear infinite;
+ 
+
+
+  
 
   @media (max-width: 768px) {
-    width: 68vw;
-    height: 50vh;
+    min-width: 90vw;
+  
+  
   }
 `;
 
@@ -177,27 +161,6 @@ const TestimonieStar = styled.span`
 `;
 
 const Testimonies = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonies.length);
-    }, 5000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
-  const getNextIndex = (index) => {
-    return (index + 1) % testimonies.length;
-  };
-
-
-  const getPrevIndex = (index) => {
-    return (index - 1 + testimonies.length) % testimonies.length;
-  };
-
 
   return (
     <StyledTestimoniesWrapper>
@@ -205,25 +168,25 @@ const Testimonies = () => {
         <TestimonialTitle>Testimonies</TestimonialTitle>
         <TestimonialSubtitle>What Clients Say</TestimonialSubtitle>
       </TestimoniesTextWrapper>
-      <TestimoniesSlider>
-        <TestimoniesSliderContent style={{ transform: `translateX(-${currentIndex * (100 / testimonies.length)}%)` }}>
-          {testimonies.map((testimonial, index) => (
-            <TestimoniesItem key={index}>
-              <TestimoniesContent>
-                <TestimonieTitle>{testimonial.name}</TestimonieTitle>
-                <TestimonieText>{testimonial.text}</TestimonieText>
-                <TestimonieStarsContainer>
-                  <TestimonieStar>⭐</TestimonieStar>
-                  <TestimonieStar>⭐</TestimonieStar>
-                  <TestimonieStar>⭐</TestimonieStar>
-                  <TestimonieStar>⭐</TestimonieStar>
-                  <TestimonieStar>⭐</TestimonieStar>
-                </TestimonieStarsContainer>
-                <TestimonieCompany>{testimonial.company}</TestimonieCompany>
-              </TestimoniesContent>
-            </TestimoniesItem>
-          ))}
-        </TestimoniesSliderContent>
+      <TestimoniesSlider
+
+      >
+        {testimonies.map((testimonial, index) => (
+          <TestimoniesItem key={index}>
+            <TestimoniesContent>
+              <TestimonieTitle>{testimonial.name}</TestimonieTitle>
+              <TestimonieText>{testimonial.text}</TestimonieText>
+              <TestimonieStarsContainer>
+                <TestimonieStar>⭐</TestimonieStar>
+                <TestimonieStar>⭐</TestimonieStar>
+                <TestimonieStar>⭐</TestimonieStar>
+                <TestimonieStar>⭐</TestimonieStar>
+                <TestimonieStar>⭐</TestimonieStar>
+              </TestimonieStarsContainer>
+              <TestimonieCompany>{testimonial.company}</TestimonieCompany>
+            </TestimoniesContent>
+          </TestimoniesItem>
+        ))}
       </TestimoniesSlider>
     </StyledTestimoniesWrapper>
   );

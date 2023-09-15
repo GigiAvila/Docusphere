@@ -10,11 +10,10 @@ const NavbarContainer = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  width: 90vw;
+  width: 100%;
 
   @media (max-width:768px) {
-    align-items: flex-start;
+    align-items: center;
   }
 `;
 
@@ -36,11 +35,16 @@ const NavbarTitle = styled.h1`
 
 `;
 
+const MenuIconContainer = styled.div`
+width: 6vw;
+height: auto;
+`
+
 const MenuIcon = styled.img`
 display: none;
 
 @media (max-width: 768px) {
-width: 6vw;
+width: 100%;
 height: auto;
 display: inline-flex;
 }
@@ -126,12 +130,13 @@ const NavbarListItem = styled.li`
   }
 `;
 
+
 const Navbar = () => {
   const location = useLocation();
   const { isLoggedIn } = useAuth();
-
   const isAppPage = location.pathname === '/';
   const [menuOpen, setMenuOpen] = useState(false);
+
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -149,29 +154,37 @@ const Navbar = () => {
         <Link to="/#home">DOCUSPHERE</Link>
       </NavbarTitle>
       {menuOpen ? (
-        <MenuIcon
-          src={closeIcon}
-          alt="CloseIcon"
-          onClick={toggleMenu}
-          style={{ cursor: 'pointer' }}
-        />
+        <MenuIconContainer>
+          <MenuIcon
+            src={closeIcon}
+            alt="CloseIcon"
+            onClick={toggleMenu}
+            style={{ cursor: 'pointer' }}
+          />
+        </MenuIconContainer>
+
       ) : (
-        <MenuIcon
-          src={menuIcon}
-          alt="MenuIcon"
-          onClick={toggleMenu}
-          style={{ cursor: 'pointer' }}
-        />
+        <MenuIconContainer>
+          <MenuIcon
+            src={menuIcon}
+            alt="MenuIcon"
+            onClick={toggleMenu}
+            style={{ cursor: 'pointer' }}
+          />
+        </MenuIconContainer>
+
       )}
       <NavbarList menuOpen={menuOpen}>
-        <NavbarListItem>
+        <NavbarListItem
+          onClick={toggleMenu}>
           {!isAppPage ? (
             <Link to="/#home">Home</Link>
           ) : (
             <a href="#home">Home</a>
           )}
         </NavbarListItem>
-        <NavbarListItem>
+        <NavbarListItem
+          onClick={toggleMenu}>
           {!isAppPage ? (
             <Link to="/#about" onClick={() => scrollToElement(aboutRef)}>
               About
@@ -180,14 +193,17 @@ const Navbar = () => {
             <a href="#about">About</a>
           )}
         </NavbarListItem>
-        <NavbarListItem>
+        <NavbarListItem
+          onClick={toggleMenu}>
           <Link to="/pricingOptions">Pricing</Link>
         </NavbarListItem>
-        <NavbarListItem>
+        <NavbarListItem
+          onClick={toggleMenu}>
           <Link to="/contactUs">Contact</Link>
         </NavbarListItem>
         {!isLoggedIn ? (
-          <NavbarListItem>
+          <NavbarListItem
+            onClick={toggleMenu}>
             <Link to="/signin">Sign In</Link>
           </NavbarListItem>
         ) : null}

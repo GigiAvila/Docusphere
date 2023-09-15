@@ -23,7 +23,7 @@ test('Navbar renders correctly', () => {
   expect(navbarComponent).toBeInTheDocument();
 
   const links = screen.getAllByRole('link');
-  expect(links).toHaveLength(5);
+  expect(links).toHaveLength(6);
 });
 
 test('Navbar links navigate to the correct routes', async () => {
@@ -49,11 +49,18 @@ test('Navbar links navigate to the correct routes', async () => {
     expect(window.location.pathname).toBe('/');
   });
 
-  const contactLink = screen.getByText('Pricing');
-  userEvent.click(contactLink);
+  const pricingLink = screen.getByText('Pricing');
+  userEvent.click(pricingLink);
 
   await waitFor(() => {
     expect(window.location.pathname).toBe('/pricingOptions');
+  });
+
+  const contactLink = screen.getByText('Contact');
+  userEvent.click(contactLink);
+
+  await waitFor(() => {
+    expect(window.location.pathname).toBe('/contactUs');
   });
 
 

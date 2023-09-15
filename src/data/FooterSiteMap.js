@@ -1,21 +1,18 @@
-export const SITEMAP = [{
-  route: 'Product',
-  subroute: 'Create an account',
-  subroute: 'Login',
-  subroute: 'My Account',
-  subroute: 'Pricing'
-}, {
-  route: 'Company',
-  subroute: 'About us',
-  subroute: 'Partners',
-  subroute: 'Testimonies'
-},
-{
-  route: 'Community',
-  subroute: 'Blog',
-},
-{
-  route: 'Support',
-  subroute: 'FAQs',
-  subroute: 'Contact Us',
-}]
+export const SITEMAP = [
+  {
+    title: 'Product',
+    subroutes: ['Create an account', 'Login', 'My Account', 'Pricing'],
+  },
+  {
+    title: 'Company',
+    subroutes: ['About us', 'Partners', 'Testimonies'],
+  },
+  {
+    title: 'Community',
+    subroutes: ['Blog'],
+  },
+  {
+    title: 'Support',
+    subroutes: ['FAQs', 'Contact Us'],
+  },
+];

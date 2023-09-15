@@ -7,16 +7,16 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from '../context/AuthContext';
 import Header from '../components/Header';
 
 test('Header renders Navbar and StyleColorMode components', () => {
   const { getByTestId } = render(
-    <AuthProvider> {/* Envuelve el Header con el AuthProvider */}
-      <MemoryRouter>
+    <AuthProvider>
+      <BrowserRouter>
         <Header />
-      </MemoryRouter>
+      </BrowserRouter>
     </AuthProvider>
   );
 

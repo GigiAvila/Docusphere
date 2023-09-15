@@ -9,7 +9,7 @@ import Footer from './Footer';
 const ContactUsSection = styled.section`
 width: 100%;
 height: 100%;
-padding-top: 10vw;
+padding-top: 6vw;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -17,7 +17,8 @@ align-items: center;
 background-color:rgb(194, 168, 230, 0.2);
 
 @media (max-width: 768px) {
-  padding-top: 0vw;
+  padding-top: 23vw;
+  padding-bottom: 3vw;
 }
 `
 
@@ -26,15 +27,22 @@ font-size: 3vw;
 background: linear-gradient(to right, #c2a8e6, #0000ff);
     -webkit-background-clip: text;
     color: transparent;
+
+    @media (max-width: 768px) {
+      font-size: 6vw;
+    }
 }`
 
 const FormContainer = styled.form`
-  width: 50%;
+  width: 40%;
   padding: 1.5vw;
   margin: 1.5vw;
-  background-color: #f4f4f4;
+  background-color: white;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  @media (max-width:768px) {
+    width: 80%
+  }
 
 `;
 
@@ -44,6 +52,11 @@ const FormField = styled.div`
   label {
     display: block;
     margin-bottom: 0.2vw;
+    font-size: 0.8vw;
+
+    @media (max-width:768px) {
+      font-size: 3.5vw;
+    }
   }
 
   input,
@@ -51,22 +64,36 @@ const FormField = styled.div`
   textarea {
     width: 100%;
     padding: 0.8vw;
-    border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #f2f2f2;
+    font-size: 0.7vw;
+
+    @media (max-width:768px) {
+      font-size: 3vw;
+    }
+  
   }
 
   input,
   select{
     height: 2.5vw;
+
+    @media (max-width:768px) {
+      height: 10vw;
+    }
   }
 
   textarea {
     height: 5vw;
+
+    @media (max-width:768px) {
+      height: 20vw;
+    }
   }
 
 
   p {
-    color: red;
+    color: tomato;
   }
 `;
 
@@ -75,6 +102,15 @@ display: flex;
 justify-content: center;
 align-items: center;
 gap: 0.5vw;
+
+label {
+  font-size:1vw;
+
+  @media (max-width:768px) {
+    font-size:3.5vw;
+  }
+  
+}
 `
 
 const SubmitButton = styled.button`
@@ -86,6 +122,7 @@ const SubmitButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  margin-top: 2vw;
 
   &:hover {
     background-color: #008080;
@@ -113,10 +150,10 @@ const ContactUs = () => {
     },
   });
 
-  console.log(formState.errors);
+
 
   const onSubmit = (values) => {
-    console.log('Submit de react-hook-form:', values); // aca se veran los valores que tenga el formulario
+    console.log('Submit de react-hook-form:', values);
   };
 
 

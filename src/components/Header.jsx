@@ -17,14 +17,20 @@ const HeaderContainer = styled.header`
   border-bottom: 1px solid #f2f2f2;
   backdrop-filter: blur(10px);
   z-index: 2;
+  
 `;
+
+const ColorModeContainer = styled.div`
+@media (max-width: 768px){
+display: none;
+}`
 
 const Header = ({ isSignInPage }) => {
   return (
     <HeaderContainer>
       <Navbar isSignInPage={isSignInPage} />
       <UserAvatar />
-      <StyleColorMode />
+      <ColorModeContainer><StyleColorMode /></ColorModeContainer>
     </HeaderContainer>
   );
 }

@@ -29,19 +29,22 @@ const Partners = () => {
 
 
   const CarrouselContainer = styled.div`
-  width: 100%;
+  width: 70%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5vw;
   background-color: white;
-  flex-wrap: wrap;
+
   `
 
+
+
   const PartnerLogoContainer = styled.div`
-  width: 7vw;
+  width: 10vw;
   height: auto;
+  
 
   @media (max-width: 768px){
     width: 25vw;

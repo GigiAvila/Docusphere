@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Input, Stack, InputGroup, InputRightElement, Button, Tooltip } from '@chakra-ui/react';
 import AvatarImg from '../../assets/Avatar.png'
 import { useAuth } from '../../hooks/useAuth';
 
@@ -180,7 +179,7 @@ const MyAccountData = () => {
           <AvatarImage src={AvatarImg} alt="UserPhoto" />
           <ChangePhotoButton>
             New Photo
-            <FileInput type="file" accept="image/*" onChange={handlePhotoUpload} />
+            <FileInput type="file" onChange={handlePhotoUpload} />
           </ChangePhotoButton>
         </AvatarContainer>
         <MyAccountTitle>My Account</MyAccountTitle>

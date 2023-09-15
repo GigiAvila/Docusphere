@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import GlobalStyles from '../../components/GlobalStyles';
 import TitleLoginText from './TitleLoginText'
 import { Input, Stack, InputGroup, InputRightElement, Button, Tooltip } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons';
@@ -88,7 +87,7 @@ const LogIn = () => {
 
   return (
     <>
-      <GlobalStyles />
+
       <LogInSection >
         <TitleLoginText isLoggedIn={isLoggedIn} />
         {showLogInForm && isLoggedIn === false &&

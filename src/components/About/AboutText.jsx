@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { Button } from '@chakra-ui/react'
 import { ABOUT_SLOGAN, ABOUT_TITLE } from '../../data/TitleTexts'
 import chatbotImg from '../../assets/chatbot.png'

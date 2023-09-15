@@ -15,7 +15,7 @@ font-weight: bold;
 font-size: 0.8vw;
 
 @media (max-width:768px){
-  font-size: 2.8vw;
+  display: none;
 }
 `
 

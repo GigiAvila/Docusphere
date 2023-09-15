@@ -8,7 +8,7 @@ flex-direction: column;
 align-items: flex-start;
 justify-content: space-evenly;
 width: 50%;
-padding-left: 2vw;
+padding-left: 0.5vw;
 
 `
 

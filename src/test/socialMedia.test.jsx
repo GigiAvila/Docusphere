@@ -5,15 +5,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import SocialMedia from '../components/Footer/SocialMedia.jsx';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 
-test('renders SocialMedia component with correct alt text', () => {
-  const { getByAltText } = render(<Router>
+test('renders SocialMedia component with correct alt ', () => {
+  const { getByAltText } = render(<BrowserRouter>
     <SocialMedia />
-  </Router>);
+  </BrowserRouter>);
 
-  // Verificar los atributos alt de las imágenes
+
   const facebookLogoImg = getByAltText('facebookLogo');
   const instagramLogoImg = getByAltText('InstagramLogo');
   const twitterLogoImg = getByAltText('TwitterLogo');
