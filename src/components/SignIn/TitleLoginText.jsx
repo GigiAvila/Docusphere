@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { LOGIN_TEXT, LOGIN_TITLE } from '../../data/TitleTexts';
+import React from 'react'
+import styled from 'styled-components'
+import { LOGIN_TEXT, LOGIN_TITLE } from '../../data/TitleTexts'
 
 const TitleLoginOuterContainer = styled.div`
   width: 100%;
@@ -12,12 +12,13 @@ const TitleLoginOuterContainer = styled.div`
   @media (max-width: 768px) {
     padding-left: 10%;
   }
-`;
+`
 
 const TitleLoginContainer = styled.div`
   > h3 {
     font-size: 2.8rem;
-    font-family: "Nunito";
+    font-family: 'Nunito';
+    color: black;
 
     @media (max-width: 768px) {
       font-size: 7vw;
@@ -27,14 +28,14 @@ const TitleLoginContainer = styled.div`
   > h5 {
     font-size: 1.3rem;
     margin-bottom: 2vw;
-    font-family: "Nunito";
+    font-family: 'Nunito';
+    color: black;
 
     @media (max-width: 768px) {
       font-size: 5vw;
     }
   }
-`;
-
+`
 
 const TitleLoginText = ({ isLoggedIn }) => {
   return (
@@ -48,7 +49,7 @@ const TitleLoginText = ({ isLoggedIn }) => {
         </TitleLoginOuterContainer>
       ) : null}
     </>
-  );
+  )
 }
 
-export default TitleLoginText;
+export default TitleLoginText

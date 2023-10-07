@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react'
+import styled from 'styled-components'
 import AvatarImg from '../../assets/Avatar.png'
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth'
 
 const AccountSection = styled.section`
   width: 30vw;
@@ -17,7 +17,7 @@ const AccountSection = styled.section`
     width: 95vw;
     height: auto;
   }
-`;
+`
 
 const AvatarContainer = styled.div`
   width: 100%;
@@ -26,23 +26,22 @@ const AvatarContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 1vw;
-
-`;
+`
 
 const AvatarImage = styled.img`
-  width: 6vw; 
+  width: 6vw;
   height: auto;
   border-radius: 50%;
 
   @media (max-width: 768px) {
     width: 10vw;
   }
-`;
+`
 
 const ChangePhotoButton = styled.label`
   background-color: transparent;
   border: none;
-  color: #0074d9; 
+  color: #0074d9;
   cursor: pointer;
   margin-top: 0.5rem;
   font-size: 0.8vw;
@@ -50,21 +49,22 @@ const ChangePhotoButton = styled.label`
   @media (max-width: 768px) {
     font-size: 3.5vw;
   }
-`;
+`
 
 const FileInput = styled.input`
   display: none;
-`;
+`
 
 const MyAccountTitle = styled.h2`
-font-size: 0.9vw;
-width:100%;
-text-align: start;
-padding: 1vw;
+  font-size: 0.9vw;
+  width: 100%;
+  text-align: start;
+  padding: 1vw;
+  color: black;
 
-@media (max-width: 768px) {
-  font-size: 5vw;
-}
+  @media (max-width: 768px) {
+    font-size: 5vw;
+  }
 `
 
 const UserDataContainer = styled.div`
@@ -77,96 +77,91 @@ const UserDataContainer = styled.div`
   border: 1px solid #f2f2f2;
   margin: 0.5vw;
   padding: 1vw;
- 
+
   @media (max-width: 768px) {
     border: 0px solid #f2f2f2;
   }
-`;
+`
 
 const UserInfoCampus = styled.div`
-width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 1vw 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 0;
 `
 const UserInfoDataContainer = styled.div`
-display: flex;
-flex-direction: column;
-gap: 0.7vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7vw;
 
-@media (max-width: 768px) {
-  gap: 1.5vw;
-}
+  @media (max-width: 768px) {
+    gap: 1.5vw;
+  }
 `
 
 const UserCampusTitle = styled.h3`
-width: 20vw;
-font-size:0.8vw;
-border-bottom: 1px solid #f2f2f2;
+  width: 20vw;
+  font-size: 0.8vw;
+  color: black;
+  border-bottom: 1px solid #f2f2f2;
 
-@media (max-width: 768px) {
-  font-size: 4vw;
-}
+  @media (max-width: 768px) {
+    font-size: 4vw;
+  }
 `
 
 const UserCampusInfo = styled.h5`
-font-size:0.8vw;
-font-weight:300;
+  font-size: 0.8vw;
+  font-weight: 300;
+  color: black;
 
-
-@media (max-width: 768px) {
-  font-size: 4vw;
-  font-weight:300;
-}
+  @media (max-width: 768px) {
+    font-size: 4vw;
+    font-weight: 300;
+  }
 `
 
 const EditButton = styled.button`
-background-color:  #65D3AC;
-padding: 0.3vw 1vw;
-border-radius: 10px;
-font-size: 0.7vw;
-font-weight: 300;
+  background-color: #65d3ac;
+  padding: 0.3vw 1vw;
+  border-radius: 10px;
+  font-size: 0.7vw;
+  font-weight: 300;
 
-@media (max-width: 768px) {
-  font-size: 4vw;
-  padding: 2vw 2.5vw;
-}
-
+  @media (max-width: 768px) {
+    font-size: 4vw;
+    padding: 2vw 2.5vw;
+  }
 `
 
 const ShowPassButton = styled.button`
-background-color:  teal;
-padding: 0.3vw 1vw;
-border-radius: 10px;
-font-size: 0.7vw;
-font-weight: 300;
+  background-color: teal;
+  padding: 0.3vw 1vw;
+  border-radius: 10px;
+  font-size: 0.7vw;
+  font-weight: 300;
 
-@media (max-width: 768px) {
-  font-size: 4vw;
-  padding: 1.3vw 2vw;
-}
-
+  @media (max-width: 768px) {
+    font-size: 4vw;
+    padding: 1.3vw 2vw;
+  }
 `
 
 const PassButtonContainer = styled.div`
-display: flex;
-flex-direction: column;
-gap: 0.5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
 `
 
 const MyAccountData = () => {
-
   const [showPassword, setShowPassword] = useState(false)
 
-
-  const { user } = useAuth();
-
+  const { user } = useAuth()
 
   const handlePhotoUpload = (event) => {
-    const file = event.target.files[0];
-
-  };
+    const file = event.target.files[0]
+  }
 
   const handleShowPassword = (event) => {
     setShowPassword(!showPassword)
@@ -176,10 +171,10 @@ const MyAccountData = () => {
     <>
       <AccountSection>
         <AvatarContainer>
-          <AvatarImage src={AvatarImg} alt="UserPhoto" />
+          <AvatarImage src={AvatarImg} alt='UserPhoto' />
           <ChangePhotoButton>
             New Photo
-            <FileInput type="file" onChange={handlePhotoUpload} />
+            <FileInput type='file' onChange={handlePhotoUpload} />
           </ChangePhotoButton>
         </AvatarContainer>
         <MyAccountTitle>My Account</MyAccountTitle>
@@ -201,11 +196,16 @@ const MyAccountData = () => {
           <UserInfoCampus>
             <UserInfoDataContainer>
               <UserCampusTitle>Password</UserCampusTitle>
-              <UserCampusInfo> {showPassword ? user.loginPassword : '************'}  </UserCampusInfo>
+              <UserCampusInfo>
+                {' '}
+                {showPassword ? user.loginPassword : '************'}{' '}
+              </UserCampusInfo>
             </UserInfoDataContainer>
             <PassButtonContainer>
-              <ShowPassButton onClick={handleShowPassword}>{showPassword ? 'Hide' : 'Show'}</ShowPassButton>
-              <EditButton >Edit</EditButton>
+              <ShowPassButton onClick={handleShowPassword}>
+                {showPassword ? 'Hide' : 'Show'}
+              </ShowPassButton>
+              <EditButton>Edit</EditButton>
             </PassButtonContainer>
           </UserInfoCampus>
           <UserInfoCampus>
@@ -218,7 +218,7 @@ const MyAccountData = () => {
         </UserDataContainer>
       </AccountSection>
     </>
-  );
-};
+  )
+}
 
-export default MyAccountData;
+export default MyAccountData

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SIGNUP_TEXT, SIGNUP_TITLE } from '../../data/TitleTexts';
-
+import { SIGNUP_TEXT, SIGNUP_TITLE } from '../../data/TitleTexts'
 
 const TitleSignUpContainer = styled.div`
   width: 100%;
@@ -18,7 +17,8 @@ const TitleSignUpContainer = styled.div`
 
   > h3 {
     font-size: 2.8rem;
-    font-family: "Nunito";
+    font-family: 'Nunito';
+    color: black;
 
     @media (max-width: 768px) {
       font-size: 6vw;
@@ -28,14 +28,15 @@ const TitleSignUpContainer = styled.div`
   > h5 {
     font-size: 1.3rem;
     margin-bottom: 1.8vw;
-    font-family: "Nunito";
+    font-family: 'Nunito';
+    color: black;
 
     @media (max-width: 768px) {
-      padding-top:1vw;
+      padding-top: 1vw;
       font-size: 4vw;
     }
   }
-`;
+`
 
 const TitleSignUpText = () => {
   return (

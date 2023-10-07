@@ -102,6 +102,7 @@ const TestimoniesItem = styled.div`
 
   @media (max-width: 768px) {
     min-width: 90vw;
+    height: auto;
   
   
   }
@@ -109,6 +110,7 @@ const TestimoniesItem = styled.div`
 
 const TestimoniesContent = styled.div`
   font-family: "Nunito";
+
 `;
 
 const TestimonieTitle = styled.h4`
